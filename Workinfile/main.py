@@ -4,7 +4,7 @@ text = 'tags: \n  - gamesdb' # фраза, которая будет допис�
 output = '' # инициализация результирующего текста
 marker = 0
 
-directory = "C:/Users\TeSoul\Documents\Obsidian Vault\Trash\Movie list"
+directory = "C:/Users\TeSoul\Documents\Obsidian Vault\Base\Daily"
  
 # Получаем список файлов
 files = os.listdir(directory)
@@ -14,14 +14,14 @@ def changein():
     for f in files:
         with open(directory + '/' + f, 'r', encoding="utf-8") as file:
             for line in file:
-                if "gamesdb" in line:
-                    output += line.replace("gamesdb", "moviedb")
+                if "Backlog/Base/Daily" in line:
+                    output += line.replace("Backlog/Base/Daily", "Base/Daily")
                 else:
                     output += line
 
         with open(directory + '/' + f, 'w', encoding="utf-8") as file:
-                file.write(output)
-    output = ''
+            file.write(output)
+        output = ''
 
 def addin():
     # Выводим список файлов
