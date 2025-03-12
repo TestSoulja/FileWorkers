@@ -1,10 +1,10 @@
 import os
 
-text = 'tags: \n  - gamesdb' # фраза, которая будет дописана в конец строки
+text = 'played: true' # фраза, которая будет дописана в конец строки
 output = '' # инициализация результирующего текста
 marker = 0
 
-directory = "C:/Users\TeSoul\Documents\Obsidian Vault\Base\Daily"
+directory = "C:/Users\TeSoul\Documents\Obsidian Vault\Media DB\games"
  
 # Получаем список файлов
 files = os.listdir(directory)
@@ -14,8 +14,9 @@ def changein():
     for f in files:
         with open(directory + '/' + f, 'r', encoding="utf-8") as file:
             for line in file:
-                if "Backlog/Base/Daily" in line:
-                    output += line.replace("Backlog/Base/Daily", "Base/Daily")
+                if "gamesdb" in line:
+                    output += line.replace("gamesdb", "mediaDB/game")
+                    
                 else:
                     output += line
 
@@ -44,5 +45,8 @@ def addin():
         output = '' # инициализация результирующего текста
         marker = 0
         
-# changein()
+changein()
 # addin()
+
+# Status: Done
+# played: true
